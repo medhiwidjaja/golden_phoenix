@@ -10,6 +10,9 @@
     "tailwindcss": "^3.0.12"
   },
   "dependencies": {
-    "alpinejs": "^3.7.1"
+    "alpinejs": "^3.7.1",
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "phoenix_live_view": "file:../deps/phoenix_live_view"
   }
 }
