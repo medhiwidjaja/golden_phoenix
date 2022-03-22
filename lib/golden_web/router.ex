@@ -18,6 +18,7 @@ defmodule GoldenWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    get "/daisy", DaisyController, :index
   end
 
   # Other scopes may use custom stacks.
