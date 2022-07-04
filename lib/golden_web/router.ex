@@ -17,7 +17,7 @@ defmodule GoldenWeb.Router do
   scope "/", GoldenWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", TodoLive, :index
     get "/daisy", DaisyController, :index
   end
 
