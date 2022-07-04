@@ -10,8 +10,18 @@ import Config
 # which you should run after static files are built and
 # before starting your production server.
 config :golden, GoldenWeb.Endpoint,
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  http: [port: {:system, "PORT"}],
+  url: [host: "app.marak.id", port: 443],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  check_origin: ["//157.245.158.204", "//app.marak.id", "//www.app.marak.id"],
+  force_ssl: [hsts: true],
+  https: [
+    port: 443,
+    cipher_suite: :strong,
+    otp_app: :golden_web,
+    keyfile: System.get_env("MARAK_APP_SSL_KEY_PATH"),
+    certfile: System.get_env("MARAK_APP_SSL_CERT_PATH")
+  ]
 
 # Do not print debug messages in production
 config :logger, level: :info
